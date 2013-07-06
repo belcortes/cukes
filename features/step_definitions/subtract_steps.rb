@@ -21,3 +21,15 @@ end
 Then(/^I should view '(\d+)'$/) do |number|
   assert_equal(browser.div(:id => 'answer_s').text, number)
 end
+
+Given(/^I fill in '' for 'second_s'$/) do
+  browser.text_field(:id => 'second_s').set
+end
+
+Given(/^I fill in '' for 'first_s'$/) do
+  browser.text_field(:id => 'first_s').set
+end
+
+Then(/^I should view '(\-\d+)'$/) do |number|
+  assert_equal(browser.div(:id => 'answer_s').text, number)
+end
